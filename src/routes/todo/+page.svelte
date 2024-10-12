@@ -5,7 +5,7 @@
     ];
 
     async function addTask(title, description) {
-        const response = await fetch("http://127.0.0.1:8000/task", {
+        const response = await fetch("https://umsdc-backend.onrender.com/task", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -20,7 +20,7 @@
     }
 
     async function getTasks() {
-        const response = await fetch("http://127.0.0.1:8000/tasks");
+        const response = await fetch("https://umsdc-backend.onrender.com/tasks");
         const data = await response.json();
         console.log(data);
         tasks = data;
@@ -33,7 +33,7 @@
     }
 
     async function removeTask(id) {
-        await fetch(`http://127.0.0.1:8000/task/${id}`, {
+        await fetch(`https://umsdc-backend.onrender.com/task/${id}`, {
             method: "DELETE",
           });
           getTasks()
